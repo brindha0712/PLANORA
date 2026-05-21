@@ -1,0 +1,228 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#7f5af0,#2cb67d,#ff5470,#00c2ff);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    overflow:hidden;
+}
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+.container{
+    width:400px;
+    height:720px;
+    background:rgba(22,22,26,0.95);
+    backdrop-filter:blur(12px);
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    position:relative;
+}
+.screen{
+    display:none;
+    flex-direction:column;
+    height:100%;
+    padding:20px;
+    animation:fade 0.4s ease;
+}
+.active{
+    display:flex;
+}
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+h1,h2,h3,h4,p{
+    color:var(--light);
+}
+input,textarea{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:none;
+    border-radius:15px;
+    background:var(--glass);
+    color:white;
+    outline:none;
+}
+input::placeholder,
+textarea::placeholder{
+    color:#ddd;
+}
+button{
+    border:none;
+    border-radius:15px;
+    padding:14px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+}
+.main-btn{
+    background:var(--primary);
+    color:white;
+}
+.main-btn:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+.icon-btn{
+    background:none;
+    color:white;
+    font-size:1rem;
+}
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+#clock{
+    font-size:0.9rem;
+    color:#bbb;
+}
+.todo-container,
+#diary-list{
+    overflow-y:auto;
+    flex:1;
+}
+.todo-card{
+    background:var(--card);
+    padding:15px;
+    border-radius:18px;
+    margin-bottom:12px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:0.3s;
+    border-left:5px solid var(--primary);
+}:root{
+    --primary:#f05aa5;
+    --secondary:#2cb67d;
+    --danger:#ff5470;
+    --dark:#16161a;
+    --card:#242629;
+    --light:#fffffe;
+    --glass:rgba(255,255,255,0.08);
+}
+.todo-card:hover{
+    transform:scale(1.02);
+}
+.todo-card span{
+    flex:1;
+    color:white;
+}
+.completed{
+    text-decoration:line-through;
+    opacity:0.5;
+}
+.priority{
+    padding:4px 10px;
+    border-radius:10px;
+    font-size:0.7rem;
+    color:white;
+}
+.high{
+    background:var(--danger);
+}
+.medium{
+    background:orange;
+}
+.low{
+    background:var(--secondary);
+}
+.fab{
+    position:absolute;
+    bottom:25px;
+    right:25px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:var(--secondary);
+    color:white;
+    font-size:1.5rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+.fab:hover{
+    transform:scale(1.1) rotate(90deg);
+}
+.diary-entry{
+    background:var(--card);
+    padding:15px;
+    border-radius:15px;
+    margin-bottom:10px;
+    cursor:pointer;
+    border-left:5px solid var(--secondary);
+}
+.weather-box{
+    background:var(--card);
+    padding:15px;
+    border-radius:18px;
+    margin-bottom:15px;
+}
+.stats{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+    gap:10px;
+}
+.stat-box{
+    flex:1;
+    background:var(--card);
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
+}
+.progress{
+    height:8px;
+    background:#444;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:8px;
+}
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#7f5af0,#2cb67d);
+}
+.quote{
+    background:pink;
+    padding:15px;
+    border-radius:15px;
+    margin-bottom:15px;
+    font-style:italic;
+}
+textarea{
+    flex:1;
+    resize:none;
+}
+.welcome{
+    text-align:center;
+    margin-top:100px;
+}
+.task-info{
+    flex:1;
+}
+.small-text{
+    font-size:0.75rem;
+    color:#bbb;
+    margin-top:5px;
+}
